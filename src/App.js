@@ -11,23 +11,13 @@ class App extends React.Component {
     const rp = require('request-promise');
     const requestOptions = {
       method: 'GET',
-      uri: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
-      qs: {
-        'start': '1',
-        'limit': '5000',
-        'convert': 'USD'
-      },
-      headers: {
-        'X-CMC_PRO_API_KEY': 'e8fc6284-adce-42cf-992c-19aadb498ff5'
-      },
-      json: true,
-      gzip: true
+      uri: 'https://bitcoinfees.earn.com/api/v1/fees/recommended'
     };
     
     rp(requestOptions).then(response => {
       console.log('API call response:', response);
+      console.log(response["fastestFee"]);
     // }).then((data))  
-      console.log(response.data[100].name);
     }).catch((err) => {
       console.log('API call error:', err.message);
     });
@@ -36,7 +26,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        Hello
+        Helloo
       </div>
     );
   }
