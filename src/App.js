@@ -15,8 +15,9 @@ class App extends React.Component {
     };
     
     rp(requestOptions).then(response => {
-      console.log('API call response:', response);
+      console.log(response);
       console.log(response["fastestFee"]);
+      console.log(response.fastestFee);
     // }).then((data))  
     }).catch((err) => {
       console.log('API call error:', err.message);
@@ -26,7 +27,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        Helloo
+        yo.
       </div>
     );
   }
